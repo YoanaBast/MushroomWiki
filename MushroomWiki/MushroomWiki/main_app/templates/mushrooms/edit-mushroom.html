@@ -9,7 +9,7 @@
                 <a href="{% url 'dashboard' %}" id="close-btn">&times;</a>
 
                 <h2>Edit Mushroom</h2>
-                <form class="edit-form" action="{% url 'edit_mushroom' mushroom.id %}" method="POST">
+                <form class="edit-form" action="{% url 'edit_mushroom' mushroom.id %}" method="POST" enctype="multipart/form-data">
                     {{ form }}
                     {% csrf_token %}
                     <button type="submit">Edit</button>

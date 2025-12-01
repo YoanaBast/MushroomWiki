@@ -1,0 +1,20 @@
+<div class="image-field-wrapper">
+
+    {% if widget.is_initial %}
+    <!-- Currently image -->
+    <div class="current-image-wrapper">
+        <!-- You can show the current image name or preview here if you want -->
+    </div>
+    {% endif %}
+
+    <!-- File input -->
+    <div class="change-wrapper">
+        <label for="mushroom-image-upload" class="change-label">Select File</label>
+        <input type="file"
+               name="{{ widget.name }}"
+               id="mushroom-image-upload"
+               class="mushroom-image-input"
+               accept="image/*" />
+    </div>
+
+</div>

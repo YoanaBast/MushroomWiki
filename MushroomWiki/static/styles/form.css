@@ -145,3 +145,62 @@
     margin-top: 8rem;
     font-size: 30px;
 }
+
+
+.change-label {
+    font-family: 'Alkalami', serif;
+    font-family: 'Kaushan Script', cursive;
+    text-transform: uppercase;
+    outline: 0;
+    background: rgb(214, 112, 16);
+    width: 40%;
+    border: 0;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 15px 15px;
+    height: 45px;
+    padding: 0 15px;       /* remove top/bottom padding */
+    line-height: 40px;     /* centers text vertically */
+    display: inline-block;    /* match input */
+
+}
+
+.mushroom-image-input {
+    height: 40px;
+    padding: 0 15px;       /* match label */
+    box-sizing: border-box; /* ensures height includes padding */
+}
+
+.image-field-wrapper .change-label {
+    /* styles only this "Select File" label */
+    color: rgb(255, 245, 220); /* lighter cream */
+    font-size: 16px;
+
+}
+
+
+.change-label:hover {
+    background-color: #bd2c2c; /* fully opaque on hover */
+}
+
+.image-field-wrapper .change-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between input and label */
+}
+
+.mushroom-image-input::-webkit-file-upload-button {
+    width: 1px;       /* very small width */
+    padding: 0;       /* remove extra space */
+    border: none;
+    visibility: visible; /* keep it but tiny */
+}
+
+.mushroom-image-input::file-selector-button {
+    width: 1px;
+    padding: 0;
+    border: none;
+    visibility: visible;
+}
+

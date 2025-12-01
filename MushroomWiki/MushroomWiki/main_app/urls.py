@@ -1,5 +1,6 @@
 from django.urls import path, include
-
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import index_view, dashboard_view, create_mushroom_view, create_category_view, delete_mushroom_view, details_mushroom_view, edit_mushroom_view
 
 urlpatterns = [
@@ -12,4 +13,4 @@ urlpatterns = [
         path('edit-mushroom/', edit_mushroom_view, name='edit_mushroom'),
         path('delete-mushroom/', delete_mushroom_view, name='delete_mushroom'),
     ]))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

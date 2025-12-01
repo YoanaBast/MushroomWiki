@@ -7,11 +7,7 @@
             <div id="details-wrapper">
                     <a href="{% url 'dashboard' %}" id="close-btn">&times;</a>
                 <!-- mushroom image -->
-                <img
-                        id="details-img"
-                        src="{{ mushroom.image_url}}"
-                        alt="example1"
-                />
+                <img src="{{ mushroom.image.url }}" alt="{{ mushroom.name }}">
                 <!-- mushroom name -->
                 <p id="details-title">Name: {{ mushroom.name}}</p>
                 <div id="info-wrapper">

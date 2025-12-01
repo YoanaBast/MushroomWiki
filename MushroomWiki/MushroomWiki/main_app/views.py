@@ -34,12 +34,13 @@ def create_mushroom_view(request):
     if request.method == 'GET':
         form = MushroomAddForm()
     elif request.method == 'POST':
-        form = MushroomAddForm(request.POST)
+        form = MushroomAddForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('dashboard')
     context = {'form': form}
     return render(request, 'mushrooms/create-mushroom.html', context)
+
 
 
 def delete_mushroom_view(request, pk):
@@ -67,7 +68,7 @@ def edit_mushroom_view(request, pk):
     if request.method == 'GET':
         form = MushroomAEditForm(instance=mushroom)
     elif request.method == 'POST':
-        form = MushroomAEditForm(request.POST, instance=mushroom)
+        form = MushroomAEditForm(request.POST, request.FILES, instance=mushroom)
         if form.is_valid():
             mushroom.save()
             return redirect('dashboard')
