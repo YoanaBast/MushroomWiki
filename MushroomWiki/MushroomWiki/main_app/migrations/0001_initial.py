@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             name='Mushroom',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50, validators=[django.core.validators.MinLengthValidator(2), MushroomWiki.main_app.validators.only_letters_validator])),
+                ('name', models.CharField(max_length=50, validators=[django.core.validators.MinLengthValidator(2), MushroomWiki.main_app.validators.only_letters_spaces])),
                 ('image_url', models.URLField()),
                 ('description', models.TextField()),
                 ('nutrition', models.TextField()),

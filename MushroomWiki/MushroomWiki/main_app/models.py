@@ -1,14 +1,10 @@
-from django.core.validators import MinLengthValidator, RegexValidator
+from django.core.validators import MinLengthValidator
 from django.db import models
 
-from .validators import only_letters_validator
+from .validators import only_letters_spaces
 
 
 # Create your models here.
-only_letters_spaces = RegexValidator(
-    regex=r'^[A-Za-z ]+$',
-    message='Name may contain only letters and spaces.'
-)
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
