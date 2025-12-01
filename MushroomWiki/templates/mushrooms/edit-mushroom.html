@@ -1,0 +1,21 @@
+{% extends 'common/base.html' %}
+{% block content %}
+
+    <main>
+
+        <!-- Edit Mushroom Form -->
+        <section id="edit">
+            <div class="form">
+                <a href="{% url 'dashboard' %}" id="close-btn">&times;</a>
+
+                <h2>Edit Mushroom</h2>
+                <form class="edit-form" action="{% url 'edit_mushroom' mushroom.id %}" method="POST">
+                    {{ form }}
+                    {% csrf_token %}
+                    <button type="submit">Edit</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}

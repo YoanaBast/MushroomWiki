@@ -1,0 +1,37 @@
+{% extends 'common/base.html' %}
+{% block content %}
+
+
+    <main>
+
+        <!-- Dashboard Page -->
+        <h2>Mushrooms</h2>
+        <section id="dashboard">
+            <!-- Display a div "Mushroom" with information about each post (if any)-->
+            {% if mushrooms %}
+            {% for m in mushrooms %}
+
+            <!-- first Mushroom -->
+            <div class="mushroom">
+                <!-- Mushroom image -->
+                <img src="{{ m.image_url }}" alt="example1"/>
+                <!-- Mushroom name -->
+                <h3 class="title">{{ m.name }}</h3>
+                <!-- Mushroom description -->
+                <p class="description">{{ m.description }}</p>
+                <!-- Mushroom details button -->
+                <a class="details-btn" href="{% url 'details_mushroom' m.id %}">More Info</a>
+            </div>
+            {%endfor%}
+
+
+        </section>
+        {%else%}
+
+
+        <!-- Display a heading if there are no posts -->
+        <h2>No mushroom info yet.</h2>
+        {%endif%}
+
+    </main>
+{% endblock %}

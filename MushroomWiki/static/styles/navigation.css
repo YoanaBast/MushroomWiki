@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+body {
+  color: rgb(241, 133, 10);
+  margin: 0;
+  padding: 0;
+  width: 97vw;
+  font-family: 'Merienda', cursive;
+  background:  url('../images/pleads.jpg');
+  background-repeat: repeat;           /* makes the matrix */
+  background-size: 200px;              /* size of each tile – adjust */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 20px; /* add proper padding all around */
+  box-sizing: border-box;
+
+  /* thin gradient line */
+  border-bottom: 2px solid transparent;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    brown 10%,
+    brown 90%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 2px;
+}
+
+
+
+#wrapper {
+  max-width: 1200px;        /* limits how wide the page can grow */
+  margin: 0 auto;           /* centers the content */
+  transform: scale(0.70);    /* makes the page 80% size */
+  transform-origin: top center; /* scales from top */
+  background: linear-gradient(135deg, rgb(128, 180, 151), rgb(254, 233, 152), rgb(212, 182, 147));
+  border-radius: 15px; /* optional, for rounded edges */
+  box-shadow: 0 0 20px rgba(0,0,0,0.2); /* optional shadow */
+  min-height: 150vh
+
+}
+
+
+#logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* removes underline */
+  color: inherit; /* inherit color from #site-name */
+}
+#logo-link:hover {
+  opacity: 0.8; /* slightly lighter */
+  transition: opacity 0.3s ease;
+}
+
+#site-name {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: bold;
+  color: rgb(155, 79, 26); /* brown */
+}
+
+#logo-img {
+  height: clamp(60px, 10vw, 120px); /* scales with screen width */
+  width: auto; /* preserves aspect ratio */
+}
+
+.nav-items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* nav links wrap if needed */
+  padding: 0 20px; /* add left/right padding */
+
+}
+
+@media (max-width: 800px) {
+  .nav-items a {
+    font-size: clamp(14px, 3vw, 20px); /* scale smaller instead of moving */
+  }
+}
+
+.nav-items a {
+  font-size: clamp(16px, 2.5vw, 24px);
+  color: rgb(155, 79, 26);
+  text-decoration: none;
+  padding: 5px 12px;          /* space inside the border */
+  border: 2px solid rgb(155, 79, 26); /* brown border */
+  border-radius: 15px;         /* rounded corners */
+  transition: all 0.3s ease;  /* smooth hover effects */
+}
+
+.nav-items a:hover {
+  color: rgb(100, 55, 25);
+  border-color: rgb(100, 55, 25);
+  background-color: rgba(100, 55, 25, 0.1); /* optional light background on hover */
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+nav a, nav a:visited {
+  color: rgb(155, 79, 26); /* brown */
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: rgb(100, 55, 25); /* darker brown on hover */
+  text-decoration: underline;
+}
+
+nav a:active {
+  color: rgb(150, 55, 25);
+}
+
+
+
+#home img {
+  display: block;
+  margin: auto;
+  height: 68%;
+  width: 68%;
+  transform: rotate(0deg);
+  animation: rock 2.5s linear infinite; /* continuous smooth rocking */
+}
+
+@keyframes rock {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-2.5deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(2.5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+
+#home h1 {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: clamp(24px, 5vw, 60px); /* scales between 24px and 60px depending on viewport */
+  font-weight: 100;
+  text-align: center;
+  color: rgb(158, 79, 26);
+  text-transform: capitalize;
+}
+
+
+footer {
+  color: rgb(158, 79, 26);
+  font-weight: bolder;
+  text-align: center;
+  height: 20px;
+  margin-top: 50px; /* optional spacing above footer */
+  margin-bottom: 50px;
+
+}
+
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(155, 79, 26);
+    text-decoration: none;
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif; /* normal font */
+    padding: 5px 8px;
+    border-radius: 50%;
+
+}
+
+#close-btn:hover {
+    color: #bd2c2c;
+}

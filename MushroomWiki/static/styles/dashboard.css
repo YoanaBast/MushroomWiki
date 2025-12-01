@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#dashboard {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* space between mushrooms */
+  justify-items: center; /* center items in each column */
+}
+
+
+ h2 {
+  text-align: center;
+  font-size: 50px;
+  color: rgb(155, 79, 26);
+}
+
+.mushroom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;       /* responsive width */
+  max-width: 300px; /* still caps at 300px */
+  height: 400px;
+  padding-bottom: 1rem;
+  margin: 20px auto;
+  background: linear-gradient(135deg, rgba(233, 161, 8, 0.2), rgba(44, 132, 37, 0.2)); /* gradient */
+  border-radius: 15px;
+  border: none; /* removes the solid border */
+  box-sizing: border-box;
+  box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.55);
+  -webkit-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.55);
+  -moz-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.55);
+}
+
+
+.mushroom:hover {
+  transform: scale(1.05);
+}
+
+.mushroom img {
+  width: 80%;            /* fills box width */
+  height: 60%;            /* fills part of box height */
+  object-fit: cover;      /* crop if necessary without stretching */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 20px 0 20px 0;   /* 10px top & bottom spacing */
+}
+
+
+.mushroom .title {
+  margin: 0;
+  letter-spacing: 2px;
+  color: rgb(155, 79, 26);
+  font-size: 23px;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* shows ~3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.details-btn {
+  margin-top: 4px;
+  text-decoration: none;
+  font-size: 21px;
+  width: 160px;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  background: rgb(155, 79, 26);
+}
+.details-btn:hover {
+  background: #bd2c2c;
+}
+.mushroom p {
+  margin: auto;
+  font-size: 0.7rem;
+  font-weight: 500;
+  width: 90%;
+  text-align: center;
+  color: rgb(24, 23, 23);
+  font-family: 'Roboto', sans-serif;
+  word-wrap: break-word;
+}
+
