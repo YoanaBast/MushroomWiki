@@ -29,6 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['mushroomwiki.onrender.com']
 
+CSRF_TRUSTED_ORIGINS = ['https://mushroomwiki.onrender.com']
 
 # Application definition
 
