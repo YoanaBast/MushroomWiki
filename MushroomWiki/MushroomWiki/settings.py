@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['mushroomwiki.onrender.com', '127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = ['mushroomwiki.onrender.com']
+# '127.0.0.1', 'localhost'
 CSRF_TRUSTED_ORIGINS = ['https://mushroomwiki.onrender.com']
 
 # Application definition
@@ -84,30 +84,30 @@ WSGI_APPLICATION = 'MushroomWiki.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "mushroom",
-        "USER": "yoana",
-        "PASSWORD": os.getenv('DB_PASSWORD'),
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
-}
-
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": os.environ.get("DB_NAME"),
-#         "USER": os.environ.get("DB_USER"),
-#         "PASSWORD": os.environ.get("DB_PASSWORD"),
-#         "HOST": os.environ.get("DB_HOST"),
-#         "PORT": os.environ.get("DB_PORT", "5432"),
-#         "OPTIONS": {
-#             "sslmode": "require",
-#         },
+#         "NAME": "mushroom",
+#         "USER": "yoana",
+#         "PASSWORD": os.getenv('DB_PASSWORD'),
+#         "HOST": "localhost",
+#         "PORT": "5432",
 #     }
 # }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("DB_NAME"),
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
+        "HOST": os.environ.get("DB_HOST"),
+        "PORT": os.environ.get("DB_PORT", "5432"),
+        "OPTIONS": {
+            "sslmode": "require",
+        },
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
